@@ -7,7 +7,6 @@ function getRandomColor(): string {
 }
 
 function RandomColorButton({ onColorChange }: RandomColorButtonProps) {
-    // Function to generate a random hex color code
     const handleClick = () => {
         const newColor = getRandomColor();
         onColorChange(newColor);
