@@ -4,7 +4,7 @@ function App() {
   return (
     <div>
       <h1>Slumpmässig färgväxlare</h1>
-      <RandomColorButton onColorChange={(color) => console.log(`Färg ändrad till: ${color}`)} />
+      <RandomColorButton onColorChange={(color) => console.log(`Color changed to: ${color}`)} />
     </div>
   );
 }
