@@ -1,4 +1,4 @@
-import { render } from "@testing-library/react";
+import { fireEvent, render } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 
 describe("RandomColorButton", () => {
@@ -10,5 +10,12 @@ describe("RandomColorButton", () => {
     it("should have the class 'random-color-button'", () => {
         render(<RandomColorButton onColorChange={vi.fn()} />);
         expect(screen.getByRole("button")).toHaveClass("random-color-button");
+    })
+
+    it("should call onColorChange when clicked", () => {
+        const handleColorChange = vi.fn();
+        render(<RandomColorButton onColorChange={handleColorChange} />);
+        fireEvent.click(screen.getByRole("button"));
+        expect(handleColorChange).toHaveBeenCalledOnce();
     })
 });
