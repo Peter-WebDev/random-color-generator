@@ -1,4 +1,9 @@
-function RandomColorButton() {
+interface RandomColorButtonProps {
+    onColorChange: (color: string) => void;
+}
+
+
+function RandomColorButton({ onColorChange }: RandomColorButtonProps) {
     // Function to generate a random hex color code
     return (
         <button
