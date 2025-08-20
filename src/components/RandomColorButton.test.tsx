@@ -6,4 +6,9 @@ describe("RandomColorButton", () => {
         render(<RandomColorButton onColorChange={vi.fn()} />);
         expect(screen.getByRole("button")).toHaveTextContent("Slumpmässig färg");
     });
+
+    it("should have the class 'random-color-button'", () => {
+        render(<RandomColorButton onColorChange={vi.fn()} />);
+        expect(screen.getByRole("button")).toHaveClass("random-color-button");
+    })
 });
