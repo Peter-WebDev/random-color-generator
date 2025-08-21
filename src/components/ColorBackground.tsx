@@ -12,7 +12,7 @@ function ColorBackground({ backgroundColor, children }: ColorBackgroundProps) {
             className="color-background"
             data-testid="color-background"
         >
-            <div>
+            <div className="content-container">
                 {children}
             </div>
         </div>
