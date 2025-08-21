@@ -1,12 +1,19 @@
 import { useState } from "react";
+import ColorBackground from "./components/ColorBackground";
+import ColorDisplay from "./components/ColorDisplay";
+import RandomColorButton from "./components/RandomColorButton";
 
 function App() {
     const [backgroundColor, setBackgroundcolor] = useState('#FFFFFF');
 
     return (
-        <div>
+        <ColorBackground backgroundColor={backgroundColor}>
             <h1>Random Color Generator</h1>
-        </div>
+
+            <RandomColorButton onColorChange={setBackgroundcolor} />
+
+            <ColorDisplay color={backgroundColor} />
+        </ColorBackground>
     );
 }
 
