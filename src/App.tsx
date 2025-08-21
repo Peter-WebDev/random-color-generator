@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./App.css";
 import ColorBackground from "./components/ColorBackground";
 import ColorDisplay from "./components/ColorDisplay";
 import RandomColorButton from "./components/RandomColorButton";
