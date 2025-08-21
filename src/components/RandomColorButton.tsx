@@ -10,7 +10,6 @@ function RandomColorButton({ onColorChange }: RandomColorButtonProps) {
     const handleClick = () => {
         const newColor = getRandomColor();
         onColorChange(newColor);
-        console.log(`New color generated: ${newColor}`); // For debugging purposes
     }
     return (
         <button
