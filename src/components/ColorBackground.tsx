@@ -7,7 +7,15 @@ interface ColorBackgroundProps {
 
 function ColorBackground({ backgroundColor, children }: ColorBackgroundProps) {
     return (
-        <div></div>
+        <div
+            style={{ backgroundColor: backgroundColor }}
+            className="color-background"
+            data-testid="color-background"
+        >
+            <div>
+                {children}
+            </div>
+        </div>
     );
 }
 
