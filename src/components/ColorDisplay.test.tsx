@@ -1,5 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
+import ColorDisplay from "./ColorDisplay";
 
 describe("ColorDisplay", () => {
     it("should display the provided color in uppercase", () => {
