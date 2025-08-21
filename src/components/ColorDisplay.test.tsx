@@ -7,7 +7,6 @@ describe("ColorDisplay", () => {
         render(<ColorDisplay color="#aAcCeE" />);
         expect(screen.getByText("#AACCEE")).toBeInTheDocument();
         expect(screen.queryByText("#aAcCeE")).not.toBeInTheDocument();
-        // Assuming ColorDisplay component renders the color in uppercase
     });
 
     it("should display different colors correctly", () => {
