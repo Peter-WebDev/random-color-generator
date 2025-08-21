@@ -1,0 +1,10 @@
+body {
+  margin: 0;
+  font-family: system-ui;
+}
+
+.color-background {
+  display: grid;
+  min-height: 100svh;
+  transition: background-color 0.3s ease;
+}
