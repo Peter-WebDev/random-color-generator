@@ -1,11 +1,10 @@
-import CounterButton from "./components/CounterButton";
+import RandomColorButton from "./components/RandomColorButton";
 
 function App() {
   return (
     <div>
-      <h1>Vite + React</h1>
-
-      <CounterButton />
+      <h1>Slumpmässig färgväxlare</h1>
+      <RandomColorButton onColorChange={(color) => console.log(`Color changed to: ${color}`)} />
     </div>
   );
 }
