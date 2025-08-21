@@ -1,7 +1,7 @@
 function App() {
     return (
         <div>
-            <h1>Slumpmässig färgväxlare</h1>
+            <h1>Random Color Generator</h1>
         </div>
     );
 }
