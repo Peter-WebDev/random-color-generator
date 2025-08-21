@@ -4,14 +4,10 @@ import ColorBackground from "./ColorBackground";
 
 describe("ColorBackground", () => {
     it("should apply background color from props", () => {
-        // Render component with specific color
         render(<ColorBackground backgroundColor="#FFAA00">Test</ColorBackground>);
-        screen.debug();
 
-        // Find element with class name by using getByTestId
         const backgroundElement = screen.getByTestId('color-background');
 
-        // Using toHaveStyle matching the background color
         expect(backgroundElement).toHaveStyle('background-color: #FFAA00');
     });
 
