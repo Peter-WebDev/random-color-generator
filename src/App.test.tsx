@@ -19,6 +19,18 @@ describe("App Integration", () => {
     expect(screen.getByText("#FFFFFF")).toBeInTheDocument();
   });
 
+  it("should show generated color in ColorDisplay when button is clicked", () => {
+    // Mock for specific color
+    mockMathRandom.mockReturnValue(0.5); // Gives #7FFFFF
+    console.log(mockMathRandom);
+
+    render(<App />);
+
+    fireEvent.click(screen.getByRole("button"));
+
+    expect(screen.getByText("#7FFFFF")).toBeInTheDocument();
+  });
+
   it("should change background color when button i clicked", () => {
     render(<App />);
 
