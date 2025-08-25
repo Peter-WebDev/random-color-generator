@@ -1,15 +1,20 @@
 import { fireEvent, render, screen } from "@testing-library/react";
-import { describe, expect, it } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import App from "./App";
 
-describe("App", () => {
-  it("should render headline", () => {
-    render(<App />);
-    const headline = screen.getByText("Random Color Generator");
-    expect(headline).toBeInTheDocument();
+describe("App Integration", () => {
+  let mockMathRandom: any;
+
+  beforeEach(() => {
+    // Mock Math.random to get predictable results
+    mockMathRandom = vi.spyOn(Math, 'random');
   });
 
-  it("should show initial white color", () => {
+  afterEach(() => {
+    mockMathRandom.mockRestore();
+  });
+
+  it("should show initial white background color in ColorDisplay", () => {
     render(<App />);
 
     // Test initial color state in ColorDisplay
