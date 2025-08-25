@@ -31,17 +31,18 @@ describe("App Integration", () => {
     expect(screen.getByText("#7FFFFF")).toBeInTheDocument();
   });
 
-  it("should change background color when button i clicked", () => {
+  it("should change background color when button is clicked", () => {
+    mockMathRandom.mockReturnValue(0.2); // Gives #333333
     render(<App />);
 
     const backgroundElement = screen.getByTestId("color-background");
 
-    // Test initial color value
+    // Initial background color
     expect(backgroundElement).toHaveStyle("background-color: #FFFFFF");
 
     fireEvent.click(screen.getByRole("button"));
 
-    // Test color after click to NOT be white
-    expect(backgroundElement).not.toHaveStyle("background-color: #FFFFFF");
+    // New background color
+    expect(backgroundElement).toHaveStyle("background-color: #333333");
   });
 });
