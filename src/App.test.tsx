@@ -16,8 +16,6 @@ describe("App Integration", () => {
 
   it("should show initial white background color in ColorDisplay", () => {
     render(<App />);
-
-    // Test initial color state in ColorDisplay
     expect(screen.getByText("#FFFFFF")).toBeInTheDocument();
   });
 
