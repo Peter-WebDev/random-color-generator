@@ -20,7 +20,7 @@ describe("App Integration", () => {
   });
 
   it("should show generated color in ColorDisplay when button is clicked", () => {
-    // Mock for specific color
+    // Mock random number to get a specific hex value
     mockMathRandom.mockReturnValue(0.5); // Gives #7FFFFF
     console.log(mockMathRandom);
 
@@ -32,29 +32,30 @@ describe("App Integration", () => {
   });
 
   it("should change background color when button is clicked", () => {
+    // Mock random number to get a specific hex value
     mockMathRandom.mockReturnValue(0.2); // Gives #333333
     render(<App />);
 
     const backgroundElement = screen.getByTestId("color-background");
 
-    // Initial background color
+    // Verify initial background color
     expect(backgroundElement).toHaveStyle("background-color: #FFFFFF");
 
     fireEvent.click(screen.getByRole("button"));
 
-    // New background color
+    // Verify that the new background color has changed to the mocked value
     expect(backgroundElement).toHaveStyle("background-color: #333333");
   });
 
   it("should generate different colors on multiple clicks", () => {
     render(<App />);
 
-    // Mock the first color and click
+    // Mock the first color
     mockMathRandom.mockReturnValueOnce(0.4); // Gives #666666
     fireEvent.click(screen.getByRole("button"));
     expect(screen.getByText("#666666")).toBeInTheDocument();
 
-    // Mock the second color and click
+    // Mock the second color
     mockMathRandom.mockReturnValue(0.6); // Gives #999999
     fireEvent.click(screen.getByRole("button"));
     expect(screen.getByText("#999999")).toBeInTheDocument();
