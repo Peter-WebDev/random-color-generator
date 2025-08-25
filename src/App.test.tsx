@@ -11,6 +11,7 @@ describe("App Integration", () => {
   });
 
   afterEach(() => {
+    // Restore original Math.random to prevent mock from affecting other tests
     mockMathRandom.mockRestore();
   });
 
