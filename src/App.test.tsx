@@ -45,4 +45,18 @@ describe("App Integration", () => {
     // New background color
     expect(backgroundElement).toHaveStyle("background-color: #333333");
   });
+
+  it("should generate different colors on multiple clicks", () => {
+    render(<App />);
+
+    // Mock the first color and click
+    mockMathRandom.mockReturnValueOnce(0.4); // Gives #666666
+    fireEvent.click(screen.getByRole("button"));
+    expect(screen.getByText("#666666")).toBeInTheDocument();
+
+    // Mock the second color and click
+    mockMathRandom.mockReturnValue(0.6); // Gives #999999
+    fireEvent.click(screen.getByRole("button"));
+    expect(screen.getByText("#999999")).toBeInTheDocument();
+  });
 });
